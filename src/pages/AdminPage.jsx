@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import {
   Lock, LogOut, ChefHat, Clock, CheckCircle, XCircle,
-  Truck, AlertCircle, TrendingUp, ShoppingBag, Users, IndianRupee
+  Truck, AlertCircle, TrendingUp, ShoppingBag, Users, DollarSign
 } from 'lucide-react';
 
 const ADMIN_PASSWORD = 'admin123';
@@ -99,7 +99,7 @@ export default function AdminPage() {
     { label: 'Total Orders', value: orders.length, icon: <ShoppingBag className="w-5 h-5 text-blue-600" />, bg: 'bg-blue-50' },
     { label: 'Pending', value: pendingCount, icon: <Clock className="w-5 h-5 text-yellow-600" />, bg: 'bg-yellow-50' },
     { label: 'In Progress', value: servingCount, icon: <ChefHat className="w-5 h-5 text-orange-600" />, bg: 'bg-orange-50' },
-    { label: "Today's Revenue", value: `₹${todayTotal}`, icon: <IndianRupee className="w-5 h-5 text-green-600" />, bg: 'bg-green-50' },
+    { label: "Today's Revenue", value: `$${todayTotal}`, icon: <DollarSign className="w-5 h-5 text-green-600" />, bg: 'bg-green-50' },
   ];
 
   return (
@@ -195,7 +195,7 @@ export default function AdminPage() {
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="font-bold text-orange-700 text-lg">₹{order.total}</span>
+                        <span className="font-bold text-orange-700 text-lg">${order.total}</span>
                         <span className="text-gray-400 text-xs">{isExpanded ? '▲' : '▼'}</span>
                       </div>
                     </div>
@@ -212,7 +212,7 @@ export default function AdminPage() {
                             <img src={item.image} alt={item.name} className="w-10 h-10 rounded-lg object-cover" />
                             <span className="flex-1 text-sm text-gray-700">{item.name}</span>
                             <span className="text-xs text-gray-500">×{item.qty}</span>
-                            <span className="text-sm font-semibold text-gray-800">₹{item.price * item.qty}</span>
+                            <span className="text-sm font-semibold text-gray-800">${item.price * item.qty}</span>
                           </div>
                         ))}
                       </div>

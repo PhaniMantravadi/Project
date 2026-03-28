@@ -40,7 +40,7 @@ export default function MenuItemCard({ item }) {
       <div className="p-4 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-1">
           <h3 className="font-semibold text-gray-800 text-base leading-tight">{item.name}</h3>
-          <span className="text-orange-600 font-bold text-base whitespace-nowrap">₹{item.price}</span>
+          <span className="text-orange-600 font-bold text-base whitespace-nowrap">${item.price}</span>
         </div>
 
         {item.spicy > 0 && (

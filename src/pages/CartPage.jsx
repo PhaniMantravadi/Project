@@ -90,7 +90,7 @@ export default function CartPage() {
               />
               <div className="flex-1 min-w-0">
                 <h3 className="font-semibold text-gray-800 text-sm truncate">{item.name}</h3>
-                <p className="text-orange-600 font-bold text-sm">₹{item.price}</p>
+                <p className="text-orange-600 font-bold text-sm">${item.price}</p>
               </div>
               <div className="flex items-center gap-1 bg-orange-50 border border-orange-200 rounded-xl overflow-hidden">
                 <button
@@ -107,7 +107,7 @@ export default function CartPage() {
                   <Plus className="w-3 h-3" />
                 </button>
               </div>
-              <span className="font-bold text-gray-800 text-sm w-16 text-right">₹{item.price * item.qty}</span>
+              <span className="font-bold text-gray-800 text-sm w-16 text-right">${item.price * item.qty}</span>
               <button
                 onClick={() => dispatch({ type: 'REMOVE_FROM_CART', id: item.id })}
                 className="text-red-400 hover:text-red-600 transition ml-1"
@@ -125,13 +125,13 @@ export default function CartPage() {
             <h3 className="font-bold text-gray-800 mb-4">Bill Summary</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between text-gray-600">
-                <span>Subtotal</span><span>₹{cartTotal}</span>
+                <span>Subtotal</span><span>${cartTotal}</span>
               </div>
               <div className="flex justify-between text-gray-600">
-                <span>GST (5%)</span><span>₹{gst}</span>
+                <span>GST (5%)</span><span>${gst}</span>
               </div>
               <div className="border-t pt-2 flex justify-between font-bold text-base text-gray-800">
-                <span>Total</span><span className="text-orange-700">₹{grandTotal}</span>
+                <span>Total</span><span className="text-orange-700">${grandTotal}</span>
               </div>
             </div>
           </div>
